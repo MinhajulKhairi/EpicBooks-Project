@@ -1,0 +1,12 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#9C74F3"/> <!-- Warna saat ditekan -->
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <solid android:color="#101B5A"/> <!-- Warna normal -->
+        </shape>
+    </item>
+</selector>
