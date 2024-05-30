@@ -27,7 +27,6 @@ public class RegisterActivity extends AppCompatActivity {
         editor.putBoolean("isLoggedIn", true);
         editor.apply();
 
-        // Menampilkan Toast di dalam thread UI utama
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -59,12 +58,12 @@ public class RegisterActivity extends AppCompatActivity {
                         public void run() {
                             
                             try {
-                                Thread.sleep(2000); // Simulasi proses registrasi dengan tidur selama 2 detik
+                                Thread.sleep(2000); // Simulasi proses registrasi dengan thread.sleep selama 2 detik
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
 
-                            // Panggil metode untuk menyimpan pengguna setelah proses tidur selesai
+                            // Panggil metode untuk menyimpan pengguna setelah proses thread selesai
                             saveUser(username, password);
                         }
                     }).start();

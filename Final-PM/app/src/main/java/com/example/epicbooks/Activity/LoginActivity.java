@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             try {
-                                Thread.sleep(2000); // Simulasi proses login dengan tidur selama 2 detik
+                                Thread.sleep(2000); // Simulasi proses login dengan thread.sleep selama 2 detik
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }

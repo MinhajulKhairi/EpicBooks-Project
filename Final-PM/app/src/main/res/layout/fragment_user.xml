@@ -38,7 +38,6 @@
                     android:orientation="horizontal"
                     android:padding="16dp">
 
-                    <!-- Profile Image -->
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/profile_img"
                         android:layout_width="100dp"
@@ -70,7 +69,6 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- Additional Info Layout -->
                 <LinearLayout
                     android:id="@+id/additionalInfoLayout"
                     android:layout_width="match_parent"

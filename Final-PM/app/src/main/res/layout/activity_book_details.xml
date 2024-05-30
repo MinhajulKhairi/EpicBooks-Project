@@ -40,7 +40,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <!--Text view for displaying book publisher-->
                     <TextView
                         android:id="@+id/idTVpublisher"
                         android:layout_width="match_parent"
@@ -50,7 +49,6 @@
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
-                    <!--text view for displaying number of pages of book-->
                     <TextView
                         android:id="@+id/idTVNoOfPages"
                         android:layout_width="match_parent"
@@ -75,7 +73,6 @@
 
         </androidx.cardview.widget.CardView>
 
-        <!--text view for displaying book title-->
         <TextView
             android:id="@+id/idTVTitle"
             android:layout_width="match_parent"
@@ -86,7 +83,6 @@
             android:textColor="@color/black"
             android:textSize="20sp" />
 
-        <!--text view for displaying book subtitle-->
         <TextView
             android:id="@+id/idTVSubTitle"
             android:layout_width="match_parent"
@@ -95,7 +91,6 @@
             android:textColor="@color/black"
             android:textSize="14sp" />
 
-        <!--text view for displaying book description-->
         <TextView
             android:id="@+id/idTVDescription"
             android:layout_width="match_parent"

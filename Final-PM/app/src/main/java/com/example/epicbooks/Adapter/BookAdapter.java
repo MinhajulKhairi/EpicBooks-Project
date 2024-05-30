@@ -48,21 +48,21 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
         Log.d("BookAdapter", "Thumbnail URL: " + bookInfo.getThumbnail());
 
         // Menggunakan Picasso untuk memuat gambar buku dengan placeholder dan error image
-        Picasso.get()
-                .load(bookInfo.getThumbnail())
-                .placeholder(R.drawable.placeholder_image) // Gambar placeholder di drawable
-                .error(R.drawable.placeholder_image) // Gambar error di drawable
-                .into(holder.bookIV, new Callback() {
-                    @Override
-                    public void onSuccess() {
-                        Log.d("Picasso", "Success: " + bookInfo.getThumbnail());
-                    }
-
-                    @Override
-                    public void onError(Exception e) {
-                        Log.e("Picasso", "Error loading image: " + bookInfo.getThumbnail(), e);
-                    }
-                });
+//        Picasso.get()
+//                .load(bookInfo.getThumbnail())
+//                .placeholder(R.drawable.placeholder_image) // Gambar placeholder di drawable
+//                .error(R.drawable.placeholder_image) // Gambar error di drawable
+//                .into(holder.bookIV, new Callback() {
+//                    @Override
+//                    public void onSuccess() {
+//                        Log.d("Picasso", "Success: " + bookInfo.getThumbnail());
+//                    }
+//
+//                    @Override
+//                    public void onError(Exception e) {
+//                        Log.e("Picasso", "Error loading image: " + bookInfo.getThumbnail(), e);
+//                    }
+//                });
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

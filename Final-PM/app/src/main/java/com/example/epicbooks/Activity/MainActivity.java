@@ -58,17 +58,5 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
         }
 
-
-
-//        SearchFragment searchFragment = new SearchFragment();
-//
-//        Fragment fragment = fragmentManager.findFragmentByTag(SearchFragment.class.getSimpleName());
-//
-//        if (!(fragment instanceof SearchFragment)){
-//            fragmentManager
-//                    .beginTransaction()
-//                    .add(R.id.frame_container, searchFragment)
-//                    .commit();
-//        }
     }
 }

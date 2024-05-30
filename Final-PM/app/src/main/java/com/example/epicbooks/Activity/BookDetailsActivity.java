@@ -18,7 +18,6 @@ import java.util.ArrayList;
 
 public class BookDetailsActivity extends AppCompatActivity {
 
-    // creating variables for strings, text view, image views and button.
     String title, subtitle, publisher, publishedDate, description, thumbnail, previewLink, infoLink;
     int pageCount;
     private ArrayList<String> authors;
@@ -32,7 +31,7 @@ public class BookDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_details);
 
-        // initializing our views..
+        // inisialisasi tombolnya
         titleTV = findViewById(R.id.idTVTitle);
         subtitleTV = findViewById(R.id.idTVSubTitle);
         publisherTV = findViewById(R.id.idTVpublisher);
@@ -43,7 +42,7 @@ public class BookDetailsActivity extends AppCompatActivity {
 
         bookIV = findViewById(R.id.idIVbook);
 
-        // getting the data which we have passed from our adapter class.
+        // mengambil data dari BookAdapter
         title = getIntent().getStringExtra("title");
         subtitle = getIntent().getStringExtra("subtitle");
         publisher = getIntent().getStringExtra("publisher");
@@ -54,8 +53,7 @@ public class BookDetailsActivity extends AppCompatActivity {
         previewLink = getIntent().getStringExtra("previewLink");
         infoLink = getIntent().getStringExtra("infoLink");
 
-        // after getting the data we are setting
-        // that data to our text views and image view.
+        // Kemudian mengsetting datanya ke textview dan imageview
         titleTV.setText(title);
         subtitleTV.setText(subtitle);
         publisherTV.setText(publisher);
@@ -64,25 +62,20 @@ public class BookDetailsActivity extends AppCompatActivity {
         pageTV.setText("No Of Pages : " + pageCount);
         bookIV.setImageResource(R.drawable.placeholder_image);
 
-        // adding on click listener for our preview button.
+
         previewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (previewLink == null || previewLink.isEmpty()) {
-                    // below toast message is displayed when preview link is not present.
+                    // menampilkan pesan jika preview link tidak ada
                     Toast.makeText(BookDetailsActivity.this, "No preview Link present", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                // if the link is present we are opening
-                // that link via an intent.
+                // jika preview link ada, maka akan membuka link nya menggunakan intent
                 Uri uri = Uri.parse(previewLink);
                 Intent i = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(i);
             }
         });
-
-        // initializing on click listener for buy button.
-
-
     }
 }
