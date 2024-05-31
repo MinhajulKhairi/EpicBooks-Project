@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface BookApiService {
-    @GET("volumes")
-    Call<BookResponse> getBooks(@Query("q") String query);
+    @GET("volumes") // untuk mencari dan mengambil daftar buku
+    Call<BookResponse> getBooks(@Query("q") String query); // untuk melakukan pencarian
 }

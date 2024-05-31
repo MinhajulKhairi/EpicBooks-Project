@@ -34,6 +34,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+
 public class SearchFragment extends Fragment {
 
     private SharedPreferences sharedPreferences;
@@ -92,14 +93,19 @@ public class SearchFragment extends Fragment {
     private void getBooksInfo(String query) {
         bookInfoArrayList = new ArrayList<>();
 
+        // membuat instance retrofit
         Retrofit retrofit = RetrofitClient.getClient("https://www.googleapis.com/books/v1/");
         BookApiService apiService = retrofit.create(BookApiService.class);
 
+        // panggil API dengan endpoint getBooks
         Call<BookResponse> call = apiService.getBooks(query);
+
+        // tangani respons dari API.
         call.enqueue(new Callback<BookResponse>() {
             @Override
             public void onResponse(@NonNull Call<BookResponse> call, @NonNull Response<BookResponse> response) {
                 progressBar.setVisibility(View.GONE);
+                // kalau sukses, memproses hasil pencarian dan menambahkan buku ke arraylist
                 if (response.isSuccessful() && response.body() != null) {
                     BookResponse bookResponse = response.body();
                     if (bookResponse.getItems() != null) {
@@ -131,6 +137,7 @@ public class SearchFragment extends Fragment {
                         Toast.makeText(requireContext(), "No books found", Toast.LENGTH_SHORT).show();
                     }
 
+                    // kalau pencarian berhasil, hasil pencarian buku ditampilkan dalam RecyclerView
                     BookAdapter adapter = new BookAdapter(bookInfoArrayList, requireContext());
                     RecyclerView mRecyclerView = getView().findViewById(R.id.idRVBooks);
                     mRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false));
@@ -147,7 +154,6 @@ public class SearchFragment extends Fragment {
             }
         });
     }
-
 
 
     @Override

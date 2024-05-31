@@ -68,6 +68,8 @@ public class HomeFragment extends Fragment {
         adapter = new BookAdapter(bookInfoArrayList, getContext());
         mRecyclerView.setAdapter(adapter);
 
+
+        // memberikan Data Default programming
         getBooksInfo("programming");
 
         logout = view.findViewById(R.id.btn_logout);
